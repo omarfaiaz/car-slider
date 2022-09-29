@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Poppins&display=swap");
+:root {
+  --main-bg-color: brown;
+  --primary-color: #000000;
+  --secondary-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  z-index: 1;
+}
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 65px;
+  margin: 0;
+}
+h5 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1047px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+
+.car-hero-slider {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+}
+.slide-texts {
+  width: 40%;
+  padding: 0 30px;
+  color: var(--secondary-color);
+  position: relative;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.slide-texts > h1 {
+  transform: translateX(25%);
+  margin-bottom: 50px;
+}
+
+.slide-img {
+  width: 60%;
+}
+
+.index-num {
+  position: absolute;
+  left: 2%;
+  top: 90%;
+}
+
+.index-no {
+  border: 2px solid var(--secondary-color);
+  border-radius: 100%;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  margin: 0 3px;
+  z-index: 99;
+}
+.active-slide {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 120px;
+  border-radius: 45px;
+  transition: 500ms;
+}
+.nav-arr{
+  display: none;
+}
+.nav-arr img{
+  height: 30px;
+  width: 30px;
+}
+.nav-prv {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+.nav-next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+}
+
+/* animate headings */
+
+.move-headings {
+  animation: move;
+  animation-duration: 1s;
+  animation-direction: forwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* animated column */
+.move-column {
+  animation: in-w;
+  animation-duration: 2s;
+  animation-direction: forwards;
+}
+
+@keyframes in-w {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+/* responsive css */
+
+@media only screen and (max-width: 600px) {
+  .hero-slide {
+    flex-direction: column-reverse;
+    transition: 500ms !important;
+  }
+  .slide-img {
+    width: 100%;
+    min-height: 50vh !important;
+  }
+  .slide-texts {
+    width: 100%;
+    min-height: 50vh;
+    box-sizing: content-box;
+    padding: 0 15px;
+  }
+  .slide-texts > h1 {
+    transform: translateX(20px);
+    margin-bottom: 20px;
+  }
+  .slide-texts > h5 {
+    transform: translateX(20px);
+  }
+
+  .nav-arr{
+    display: block;
+  }
+  .index-no{
+    display: none;
+  }
+  .move-column {
+    animation-duration: 100ms;
+  }
+}
